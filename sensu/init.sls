@@ -14,11 +14,12 @@ sensu:
     - file: /etc/apt/sources.list.d/sensu.list
     - key_url: http://repos.sensuapp.org/apt/pubkey.gpg
     {% elif grains['os_family'] == 'RedHat' %}
-    - baseurl: http://repos.sensuapp.org/yum/el/$releasever/$basearch/
+    - baseurl: http://repositories.sensuapp.org/yum/$releasever/$basearch/
     - gpgcheck: 0
     - enabled: 1
     {% endif %}
   pkg:
     - installed
+    - version: 1:0.20.3-1
     - require:
       - pkgrepo: sensu
