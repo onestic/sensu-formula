@@ -18,8 +18,3 @@ sensu:
     - gpgcheck: 0
     - enabled: 1
     {% endif %}
-  pkg:
-    - installed
-    - version: 1:0.20.3-1
-    - require:
-      - pkgrepo: sensu
