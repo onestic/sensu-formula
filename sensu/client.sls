@@ -3,6 +3,7 @@
 
 include:
   - sensu
+  - sensu.client_install
   - sensu.rabbitmq_conf
 
 /etc/sensu/conf.d/client.json:
