@@ -1,5 +1,6 @@
 include:
   - sensu
+  - sensu.server_install
   - sensu.rabbitmq_conf
 
 {% if grains['os'] == 'CentOS' %}
