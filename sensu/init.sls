@@ -10,11 +10,12 @@ sensu:
   pkgrepo.managed:
     - humanname: Sensu Repository
     {% if grains['os_family'] == 'Debian' %}
-    - name: deb https://eol-repositories.sensuapp.org/apt sensu main
+    - name: deb http://builder.zen.onestic.com/debian/sensu/ stretch main
     - file: /etc/apt/sources.list.d/sensu.list
-    - key_url: http://eol-repositories.sensuapp.org/apt/pubkey.gpg
+    - key_url: http://builder.zen.onestic.com/debian/sensu/onestic-sensu-keyring.gpg
+    - clean_file: True
     {% elif grains['os_family'] == 'RedHat' %}
-    - baseurl: https://eol-repositories.sensuapp.org/yum/$releasever/$basearch/
+    - baseurl: http://builder.zen.onestic.com/sensu/$releasever/$basearch/
     - gpgcheck: 0
     - enabled: 1
     {% endif %}
