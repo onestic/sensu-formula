@@ -13,6 +13,7 @@ sensu:
     - name: deb http://builder.zen.onestic.com/debian/sensu/ stretch main
     - file: /etc/apt/sources.list.d/sensu.list
     - key_url: http://builder.zen.onestic.com/debian/sensu/onestic-sensu-keyring.gpg
+    - clean_file: True
     {% elif grains['os_family'] == 'RedHat' %}
     - baseurl: http://builder.zen.onestic.com/sensu/$releasever/$basearch/
     - gpgcheck: 0
